@@ -34,7 +34,7 @@ def load_ai_model():
 
     return joblib.load(model_files[0])
     
-model = load_ai_models()
+model = load_ai_model()
     
 if "user" not in st.session_state:
     st.session_state["user"] = None
