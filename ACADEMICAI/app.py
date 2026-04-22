@@ -6,12 +6,6 @@ import sqlite3
 conn = sqlite3.connect("sapes.db")
 cursor = conn.cursor()
 
-cursor.execute("""
-UPDATE users SET role = 'admin' WHERE username = 'mattpana'
-""")
-
-conn.commit()
-conn.close()
 
 import hashlib
 from io import BytesIO
