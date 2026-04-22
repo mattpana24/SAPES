@@ -25,8 +25,6 @@ def load_ai_model():
     joblib_files = glob.glob(os.path.join(model_dir, "*.joblib"))
     model_files = pkl_files + joblib_files
 
-    st.write("Model folder:", model_dir)
-    st.write("Model files found:", model_files)
 
     if not model_files:
         st.error("No AI models found. Put your .pkl or .joblib files inside the models folder.")
