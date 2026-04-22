@@ -17,6 +17,23 @@ import pandas as pd
 import streamlit as st
 import matplotlib.pyplot as plt
 
+def load_ai_model():
+    base_dir = os.path.dirname(os.path.abspath(__file__))
+    model_dir = os.path.join(base_dir, "models")
+
+    pkl_files = glob.glob(os.path.join(model_dir, "*.pkl"))
+    joblib_files = glob.glob(os.path.join(model_dir, "*.joblib"))
+    model_files = pkl_files + joblib_files
+
+    st.write("Model folder:", model_dir)
+    st.write("Model files found:", model_files)
+
+    if not model_files:
+        st.error("No AI models found. Put your .pkl or .joblib files inside the models folder.")
+        st.stop()
+
+    return joblib.load(model_files[0])
+    
 if "user" not in st.session_state:
     st.session_state["user"] = None
 
