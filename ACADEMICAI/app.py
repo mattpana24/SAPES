@@ -27,7 +27,7 @@ def load_ai_model():
 
 
     if not model_files:
-        st.error("No AI models found. Put your .pkl or .joblib files inside the models folder.")
+        st.error("No AI models found.")
         st.stop()
 
     return joblib.load(model_files[0])
