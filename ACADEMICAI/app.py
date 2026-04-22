@@ -33,6 +33,7 @@ def load_ai_model():
         st.stop()
 
     return joblib.load(model_files[0])
+    
 mode = load_ai_models()
     
 if "user" not in st.session_state:
