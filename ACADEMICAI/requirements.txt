@@ -6,4 +6,4 @@ scikit-learn
 matplotlib
 reportlab
 openai
-openpyx1
+openpyxl
